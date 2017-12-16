@@ -16,24 +16,38 @@ ori = open ('authlog.txt', 'r')
 for linea in ori.readlines():
 	if "authentication failure" in linea:	
 		guardar.append(datetime.strptime(linea[:15], "%b %d %H:%M:%S"))
-		ipes.append(linea[129:143])
+		buscarip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', linea)
+		for ip in buscarip:
+			ipes.append(ip)
+print ipes
 		
 
 
 
-for ip in range(len(ipes)):
-	dic[ipes[ip]] = ipes.count(ipes[ip])
-print dic
+
+
+
+
+
+
+
+
+
+
+
+
+
+#for ip in range(len(ipes)):
+#	dic[ipes[ip]] = ipes.count(ipes[ip])
+#print dic
 				
-
-
 
 #dic.setdefault
 #las ips van de 121 a 141
 
 ori.close()
-for dat in guardar:
-	print datetime.strftime(dat, "%m %d %H:%M:%S")
+#for dat in guardar:
+#	print datetime.strftime(dat, "%m %d %H:%M:%S")
 	
 
 
