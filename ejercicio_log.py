@@ -21,7 +21,7 @@ for linea in ori.readlines():
 			if ip not in dic:
 				dic[ip]=[]
 			dic[ip].append(datetime.strptime(linea[:15], "%b %d %H:%M:%S"))		
-print dic
+
 
 
 #Para que la salida del programa se vea "bonita", despues de ejecutarlo con run programa.py escribir "dic" y pulsar enter
