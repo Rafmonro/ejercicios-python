@@ -21,8 +21,8 @@ for linea in ori.readlines():
 
 
 
-#for ip in range(len(ipes)):
-#	dic[ipes[ip]] = ipes.count(ipes[ip])
+for ip in range(len(ipes)):
+	dic[ipes[ip]] = ipes.count(ipes[ip])
 print dic
 				
 
