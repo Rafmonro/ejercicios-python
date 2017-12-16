@@ -9,19 +9,18 @@ from datetime import datetime
 import sys
 import re
 
-guardar = []
+
 dic = {}
 
 
 ori = open ('authlog.txt', 'r')
 for linea in ori.readlines():
 	if "authentication failure" in linea:	
-		guardar.append(datetime.strptime(linea[:15], "%b %d %H:%M:%S"))
 		buscarip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', linea)
 		for ip in buscarip:
 			if ip not in dic:
 				dic[ip]=[]
-					
+			dic[ip].append(datetime.strptime(linea[:15], "%b %d %H:%M:%S"))		
 print dic
 
 
