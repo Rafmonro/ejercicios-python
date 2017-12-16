@@ -7,7 +7,8 @@
 
 from datetime import datetime
 import sys
-ipes = []
+import re
+
 guardar = []
 dic = {}
 
@@ -18,9 +19,17 @@ for linea in ori.readlines():
 		guardar.append(datetime.strptime(linea[:15], "%b %d %H:%M:%S"))
 		buscarip = re.findall(r'[0-9]+(?:\.[0-9]+){3}', linea)
 		for ip in buscarip:
-			ipes.append(ip)
-print ipes
-		
+			if ip not in dic:
+				dic[ip]=[]
+					
+print dic
+
+
+
+
+
+
+
 #https://www.daniweb.com/programming/software-development/threads/507019/python-program-to-extract-ip-addresses-from-a-log-file
 #En el enlace de arríba viene como pillar las ip de un fichero sin hardcodear
 
