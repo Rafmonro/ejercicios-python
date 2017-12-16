@@ -24,7 +24,7 @@ for linea in ori.readlines():
 print dic
 
 
-
+#Para que la salida del programa se vea "bonita", despues de ejecutarlo con run programa.py escribir "dic" y pulsar enter
 
 
 
